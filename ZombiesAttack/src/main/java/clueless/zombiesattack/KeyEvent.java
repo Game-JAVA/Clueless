@@ -161,7 +161,7 @@ public class KeyEvent {
                             case "knife" -> p1.setSprite(new Image("knifewalk-right2.png"), p1.getWeapon());
                             case "pistol" -> p1.setSprite(new Image("rickwalk2-right.png"), p1.getWeapon());
                             case "katana" -> p1.setSprite(new Image("katanawalk-right2.png"), p1.getWeapon());
-                            case null, default -> p1.setSprite(new Image("riflewalk-right2.png"), p1.getWeapon());
+                            default -> p1.setSprite(new Image("riflewalk-right2.png"), p1.getWeapon());
                         }
                     }
                     if (event.getCode() == KeyCode.A) {
@@ -170,7 +170,7 @@ public class KeyEvent {
                             case "knife" -> p1.setSprite(new Image("knifewalk-left2.png"), p1.getWeapon());
                             case "pistol" -> p1.setSprite(new Image("rickwalk2-left.png"), p1.getWeapon());
                             case "katana" -> p1.setSprite(new Image("katanawalk-left2.png"), p1.getWeapon());
-                            case null, default -> p1.setSprite(new Image("riflewalk-left2.png"), p1.getWeapon());
+                            default -> p1.setSprite(new Image("riflewalk-left2.png"), p1.getWeapon());
                         }
                     }
                     if (event.getCode() == KeyCode.J) {
@@ -239,19 +239,17 @@ public class KeyEvent {
                 points.setText(String.valueOf(p1.getPoints()) + " pts");
 
                 //DIFFICULTY
-                switch (p1.getWeapon()){
-                    case "katana":
-                        difficulty = 0.5;
-                        break;
-                    case "pistol":
-                        difficulty = 0.3;
-                        break;
-                    case "rifle":
-                        difficulty = 0.2;
-                        break;
-                    default:
-                        difficulty = 1;
-                        break;
+                if(p1.getPoints() < 399){
+                    difficulty = 1;
+                }
+                if(p1.getPoints() > 399 && p1.getPoints() < 999){
+                    difficulty = 0.5;
+                }
+                if(p1.getPoints() > 999 && p1.getPoints() < 1499){
+                    difficulty = 0.3;
+                }
+                if(p1.getPoints() > 1499){
+                    difficulty = 0.2;
                 }
 
 
