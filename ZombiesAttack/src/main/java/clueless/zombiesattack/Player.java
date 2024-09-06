@@ -189,7 +189,7 @@ public class Player extends Characters {
                         projectile.setX(getSprite().getX() + 50);
 
                     }
-                    case null, default -> {
+                    default -> {
                         this.setSprite(new Image("rifle-attack-right.png"), getWeapon(), this.isCoolDown);
 
                         projectile = new ImageView(new Image("rifle-bullet.png"));
@@ -257,7 +257,7 @@ public class Player extends Characters {
                         projectile.setX(getSprite().getX());
 
                     }
-                    case null, default -> {
+                    default -> {
                         this.setSprite(new Image("rifle-attack-left.png"), getWeapon(), this.isCoolDown);
 
                         projectile = new ImageView(new Image("rifle-bullet-left.png"));
@@ -292,14 +292,14 @@ public class Player extends Characters {
                                     case "knife" -> setSprite(new Image("knifewalk-right2.png"), getWeapon());
                                     case "katana" -> setSprite(new Image("katanawalk-right2.png"), getWeapon());
                                     case "pistol" -> setSprite(new Image("rickwalk2-right.png"), getWeapon());
-                                    case null, default -> setSprite(new Image("riflewalk-right2.png"), getWeapon());
+                                    default -> setSprite(new Image("riflewalk-right2.png"), getWeapon());
                                 }
                             } else {
                                 switch (getWeapon()) {
                                     case "knife" -> setSprite(new Image("knifewalk-left2.png"), getWeapon());
                                     case "katana" -> setSprite(new Image("katanawalk-left2.png"), getWeapon());
                                     case "pistol" -> setSprite(new Image("rickwalk2-left.png"), getWeapon());
-                                    case null, default -> setSprite(new Image("riflewalk-left2.png"), getWeapon());
+                                    default -> setSprite(new Image("riflewalk-left2.png"), getWeapon());
                                 }
                             }
 

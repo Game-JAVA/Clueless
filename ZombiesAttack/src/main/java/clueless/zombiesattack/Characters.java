@@ -24,7 +24,6 @@ public abstract class Characters extends ImageView {
     }
 
     // Methods
-
     public void move(int frame, String weapon) {
         // Timeline declaration and set a cycle
         Timeline timeline = new Timeline();
@@ -79,28 +78,11 @@ public abstract class Characters extends ImageView {
         }
     }
 
-    // Define zombie sprite according to the type
-    public void setSprite(Image img, int type) {
-        //Small Zombie
-        if(type == 1){
-            this.sprite.setImage(img);
-            this.sprite.setFitWidth(50);
-            this.sprite.setFitHeight(65);
-        }
-
-        //Medium Zombie
-        if(type == 2){
-            this.sprite.setImage(img);
-            this.sprite.setFitWidth(60);
-            this.sprite.setFitHeight(80);
-        }
-
-        //Great Zombie
-        if(type == 3){
-            this.sprite.setImage(img);
-            this.sprite.setFitWidth(75);
-            this.sprite.setFitHeight(100);
-        }
+    // just define new sprite
+    public void setSprite(Image img) {
+        this.sprite.setImage(img);
+        this.sprite.setFitWidth(95);
+        this.sprite.setFitHeight(78);
     }
 
     //Define player move animations
@@ -153,11 +135,28 @@ public abstract class Characters extends ImageView {
         }
     }
 
-    // just define new sprite
-    public void setSprite(Image img) {
-        this.sprite.setImage(img);
-        this.sprite.setFitWidth(95);
-        this.sprite.setFitHeight(78);
+    // Define zombie sprite according to the type
+    public void setSprite(Image img, int type) {
+        //Small Zombie
+        if(type == 1){
+            this.sprite.setImage(img);
+            this.sprite.setFitWidth(50);
+            this.sprite.setFitHeight(65);
+        }
+
+        //Medium Zombie
+        if(type == 2){
+            this.sprite.setImage(img);
+            this.sprite.setFitWidth(60);
+            this.sprite.setFitHeight(80);
+        }
+
+        //Great Zombie
+        if(type == 3){
+            this.sprite.setImage(img);
+            this.sprite.setFitWidth(75);
+            this.sprite.setFitHeight(100);
+        }
     }
 
 
